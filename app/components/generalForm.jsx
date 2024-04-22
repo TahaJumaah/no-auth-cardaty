@@ -54,7 +54,7 @@ export default function GeneralForm({ formHandler, onSubmit }) {
             ></NumberInputField>
           </NumberInput>
           <FormLabel htmlFor="cardType">Card Type</FormLabel>
-          <Select name="cardType" id="cardType" placeholder="اختر نوع البطاقة">
+          <Select name="cardType" id="cardType" placeholder="Select Card Type">
             <option>أغاتي</option>
             <option>بلاتينيوم</option>
           </Select>
