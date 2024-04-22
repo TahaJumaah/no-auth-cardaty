@@ -1,6 +1,18 @@
+"use client";
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
-import styles from "./moneyInfo.module.css";
+import styles from "../components/sidePanel.module.css";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
 
 export default function MoneyInfo({ searchResult }) {
   let platNum = 0;
@@ -10,6 +22,7 @@ export default function MoneyInfo({ searchResult }) {
   const [aghaty, setAghaty] = useState(null);
   const [plat, setPlat] = useState(null);
   const numberOfTypes = {};
+
   if (searchResult) {
     const numberOfCards = searchResult.length;
 
@@ -23,19 +36,41 @@ export default function MoneyInfo({ searchResult }) {
         platPrice = platPrice + 50000;
       }
     });
-
     return (
-      <Box className={styles.mainContainer}>
-        <Box>
-          <p>عدد بطاقات اغاتي : {aghatyNum}</p>
-        </Box>
-        <Box>
-          <p>حساب أغاتي : {aghatyPrice}</p>
-        </Box>
-        <Box>عدد بطاقات بلاتينيوم : {platNum}</Box>
-        <Box>
-          <p>حساب بلاتينيوم : {platPrice}</p>
-        </Box>
+      <Box className={styles.priceTable}>
+        <TableContainer>
+          <Table variant="striped" colorScheme="teal">
+            <Tbody>
+              <Tr>
+                <Td fontWeight={"700"}>Aghaty Cards</Td>
+                <Td fontWeight={"700"}>Platinum Cards</Td>
+                <Td></Td>
+              </Tr>
+              <Tr>
+                <Td>{aghatyNum}</Td>
+                <Td>{platNum}</Td>
+                <Td>Amount</Td>
+              </Tr>
+              <Tr>
+                <Td>25,000 IQD</Td>
+                <Td>50,000 IQD</Td>
+                <Td>Card Price</Td>
+              </Tr>
+              <Tr>
+                <Td>{aghatyPrice}</Td>
+                <Td>{platPrice}</Td>
+                <Td>Sum</Td>
+              </Tr>
+
+              <Tr>
+                <Td colSpan={2} backgroundColor={"silver"} textAlign={"center"}>
+                  {platPrice + aghatyPrice}
+                </Td>
+                <Td>Sub Total</Td>
+              </Tr>
+            </Tbody>
+          </Table>
+        </TableContainer>
       </Box>
     );
   } else {

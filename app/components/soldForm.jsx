@@ -20,9 +20,9 @@ export default function SoldForm({ onSubmit }) {
     <Box>
       <FormControl>
         <form onSubmit={onSubmit}>
-          <FormLabel htmlFor="datefrom">من تاريخ</FormLabel>
+          <FormLabel htmlFor="datefrom">Date From</FormLabel>
           <input required type="date" name="dateFrom" id="datefrom" />
-          <FormLabel htmlFor="dateto">الى تاريخ</FormLabel>
+          <FormLabel htmlFor="dateto">Date To</FormLabel>
           <input required type="date" name="dateTo" id="dateto" />
           <Button colorScheme="teal" type="submit">
             Submit
