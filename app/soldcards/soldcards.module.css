@@ -1,0 +1,18 @@
+.mainContainer {
+}
+
+.mainContainer form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 15px;
+}
+
+.mainContainer input {
+  border: 1px solid black;
+  border-radius: 14px;
+  padding: 14px;
+}
+.mainContainer button {
+  width: 50%;
+}

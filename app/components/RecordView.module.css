@@ -1,0 +1,16 @@
+.mainCardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: right;
+}
+.mainCardContainer p {
+  border-bottom: 2px solid rgb(71, 67, 67);
+}
+
+.resultHeaders {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: right;
+  font-size: 1.3em;
+  font-weight: 600;
+}

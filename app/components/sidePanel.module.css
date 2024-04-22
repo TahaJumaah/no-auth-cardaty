@@ -1,0 +1,52 @@
+.ohnohoney {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 4fr;
+}
+
+.sidePanel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  margin-top: 3em;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-content: center;
+  align-items: center;
+}
+.sidePanel button {
+  text-align: center;
+}
+.sidePanel button a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.mainContent {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.pageName {
+  position: relative;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
