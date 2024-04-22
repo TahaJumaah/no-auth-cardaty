@@ -26,7 +26,7 @@ export default function GeneralForm({ formHandler, onSubmit }) {
           onSubmit={onSubmit}
           method="post"
         >
-          <FormLabel htmlFor="chName">اسم حامل البطاقة</FormLabel>
+          <FormLabel htmlFor="chName">Card Holder Name</FormLabel>
           <Input
             id="chName"
             name="chName"
@@ -34,7 +34,7 @@ export default function GeneralForm({ formHandler, onSubmit }) {
             required
           ></Input>
 
-          <FormLabel htmlFor="phoneNumber">رقم الهاتف</FormLabel>
+          <FormLabel htmlFor="phoneNumber">Phone Number</FormLabel>
           <NumberInput>
             <NumberInputField
               id="phoneNumber"
@@ -44,7 +44,7 @@ export default function GeneralForm({ formHandler, onSubmit }) {
             ></NumberInputField>
           </NumberInput>
 
-          <FormLabel htmlFor="batchNumber">رقم الدفعة</FormLabel>
+          <FormLabel htmlFor="batchNumber">Batch Number</FormLabel>
           <NumberInput>
             <NumberInputField
               id="batchNumber"
@@ -53,12 +53,12 @@ export default function GeneralForm({ formHandler, onSubmit }) {
               required
             ></NumberInputField>
           </NumberInput>
-          <FormLabel htmlFor="cardType">نوع البطاقة</FormLabel>
+          <FormLabel htmlFor="cardType">Card Type</FormLabel>
           <Select name="cardType" id="cardType" placeholder="اختر نوع البطاقة">
             <option>أغاتي</option>
             <option>بلاتينيوم</option>
           </Select>
-          <FormLabel htmlFor="isSold">بطاقة مباعة؟</FormLabel>
+          <FormLabel htmlFor="isSold">Sold Card?</FormLabel>
           <input
             type="checkbox"
             name="isSold"
@@ -71,7 +71,7 @@ export default function GeneralForm({ formHandler, onSubmit }) {
           <br></br>
           {soldAtDate ? (
             <Box>
-              <FormLabel htmlFor="soldAtDate">تاريخ البيع</FormLabel>
+              <FormLabel htmlFor="soldAtDate">Date Sold</FormLabel>
               <input id="isSoldDate" name="isSoldDate" type="date"></input>
             </Box>
           ) : null}

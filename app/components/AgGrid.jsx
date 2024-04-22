@@ -7,7 +7,7 @@ import { DateTime } from "luxon";
 import { useState } from "react";
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Center, Tag, Text } from "@chakra-ui/react";
+import { Box, Center, Tag, Text } from "@chakra-ui/react";
 
 export default function MyAgGrid({ cardData }) {
   const router = useRouter();
@@ -20,20 +20,20 @@ export default function MyAgGrid({ cardData }) {
 
   const [rowData, setRowData] = useState(cardData);
   const [colDefs, setColDefs] = useState([
-    { field: "chName", headerName: "أسم حامل البطاقة" },
-    { field: "phoneNo", headerName: "رقم الهاتف" },
+    { field: "chName", headerName: "Card Holder Name" },
+    { field: "phoneNo", headerName: "Phone Number" },
     { field: "batchNo", headerName: "Batch No." },
-    { field: "cardType", headerName: "نوع البطاقة" },
+    { field: "cardType", headerName: "Card Type" },
     {
       field: "createdAt",
-      headerName: "تاريخ الاضافة",
+      headerName: "Date Added",
       valueFormatter: (params) => {
         return DateTime.fromISO(params.value).toLocaleString();
       },
     },
     {
       field: "isSoldDate",
-      headerName: "تاريخ بيع البطاقة",
+      headerName: "Date Sold",
       valueFormatter: (params) => {
         if (params.value) {
           return DateTime.fromISO(params.value).toLocaleString();
@@ -44,14 +44,31 @@ export default function MyAgGrid({ cardData }) {
     },
     {
       field: "isSold",
-      headerName: "حالة البطاقة",
+      headerName: "Card Status",
       cellRenderer: (params) => {
         if (params.value == true) {
-          return "مباعة";
+          return (
+            <Box
+              fontWeight={"700"}
+              textAlign={"center"}
+              backgroundColor={"#FF0000"}
+              borderRadius={"15px"}
+            >
+              Sold
+            </Box>
+          );
         } else if (params.value == false) {
-          return "متوفرة";
+          return (
+            <Box
+              fontWeight={"700"}
+              textAlign={"center"}
+              backgroundColor={"#C6F6D5"}
+            >
+              Available
+            </Box>
+          );
         } else {
-          return "غير معروفة";
+          return "Unknown";
         }
       },
     },

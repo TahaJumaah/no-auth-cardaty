@@ -14,15 +14,15 @@ export default function SideBar({ children }) {
   const [activePage, setActivePage] = useState(null);
   useEffect(() => {
     if (pathName == "/search") {
-      setPageName("البحث عن بطاقات");
+      setPageName("Search for cards");
     } else if (pathName == "/addrecord") {
-      setPageName("اضافة بطاقة");
+      setPageName("Add a Card");
     } else if (pathName == "/cards") {
-      setPageName("جميع البطاقات");
+      setPageName("All Cards");
     } else if (pathName == "/soldcards") {
-      setPageName("حساب البطاقات المباعة");
+      setPageName("Information about sold Cards");
     } else if (pathName.includes("/card") == true) {
-      setPageName("معلومات البطاقة");
+      setPageName("Card Information");
     } else {
       setPageName(null);
     }
@@ -32,19 +32,19 @@ export default function SideBar({ children }) {
     <Box className={styles.layout}>
       <Box className={styles.sidePanel}>
         <Button variant="solid" colorScheme="teal">
-          <Link href="/"></Link>الرئيسية
+          <Link href="/"></Link>Home
         </Button>
         <Button variant="solid" colorScheme="teal">
-          <Link href="/cards"></Link>عرض جميع البطاقات
+          <Link href="/cards"></Link>Show All Cards
         </Button>
         <Button variant="solid" colorScheme="teal">
-          <Link href="/search"></Link>بحث
+          <Link href="/search"></Link>Search
         </Button>
         <Button variant="solid" colorScheme="teal">
-          <Link href="/addrecord"></Link>اضافة
+          <Link href="/addrecord"></Link>Add
         </Button>
         <Button variant="solid" colorScheme="teal">
-          <Link href="/soldcards"></Link>البطاقات المباعة
+          <Link href="/soldcards"></Link>Sold Cards
         </Button>
       </Box>
       <Box className={styles.pageName}>

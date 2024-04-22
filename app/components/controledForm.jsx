@@ -28,7 +28,7 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
             onSubmit={onSubmit}
             method="post"
           >
-            <FormLabel htmlFor="chName">اسم حامل البطاقة</FormLabel>
+            <FormLabel htmlFor="chName">Card Holder Name</FormLabel>
             <Input
               id="chName"
               name="chName"
@@ -40,7 +40,7 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
               }}
             ></Input>
 
-            <FormLabel htmlFor="phoneNumber">رقم الهاتف</FormLabel>
+            <FormLabel htmlFor="phoneNumber">Phone Number</FormLabel>
             <NumberInput
               id="phoneNumber"
               name="phoneNo"
@@ -54,7 +54,7 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
               <NumberInputField></NumberInputField>
             </NumberInput>
 
-            <FormLabel htmlFor="batchNumber">رقم الدفعة</FormLabel>
+            <FormLabel htmlFor="batchNumber">Batch Number</FormLabel>
 
             <NumberInput
               id="batchNumber"
@@ -68,11 +68,11 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
             >
               <NumberInputField></NumberInputField>
             </NumberInput>
-            <FormLabel htmlFor="cardType">نوع البطاقة</FormLabel>
+            <FormLabel htmlFor="cardType">Card Type</FormLabel>
             <Select
               name="cardType"
               id="cardType"
-              placeholder="اختر نوع البطاقة"
+              placeholder="Select Card Type"
               value={valueState.cardType}
               onChange={(Event) => {
                 setWasValueUpdated(true);
@@ -82,7 +82,7 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
               <option>أغاتي</option>
               <option>بلاتينيوم</option>
             </Select>
-            <FormLabel htmlFor="isSold">بطاقة مباعة؟</FormLabel>
+            <FormLabel htmlFor="isSold">Sold Card?</FormLabel>
             <input
               type="checkbox"
               name="isSold"
@@ -97,7 +97,7 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
             <br></br>
             {valueState.isSold ? (
               <Box>
-                <FormLabel htmlFor="soldAtDate">تاريخ البيع</FormLabel>
+                <FormLabel htmlFor="soldAtDate">Date Sold</FormLabel>
                 <input
                   id="isSoldDate"
                   name="isSoldDate"
@@ -131,23 +131,14 @@ export default function ControlledForm({ values, onSubmit, handleCardDelete }) {
                 type="submit"
                 colorScheme="green"
               >
-                تحديث البيانات
+                Update Card
               </Button>
               <Button onClick={handleCardDelete} colorScheme="red">
-                حذف البطاقة
+                Delete Card
               </Button>
             </Box>
           </form>
         </FormControl>
-        {/* <Box display="flex" flexDir="column">
-          <p>{valueState.chName}</p>
-          <p>{valueState.phoneNo}</p>
-          <p>{valueState.batchNo}</p>
-          <p>{valueState.cardType}</p>
-          <p>{valueState.isSold.toString()}</p>
-          <p>{valueState.isSoldDate}</p>
-          <p>{valueState._id}</p>
-        </Box> */}
       </Box>
     );
   }

@@ -26,7 +26,7 @@ export default function ShowOneCard({ params }) {
   async function onSubmit(Event) {
     toast({
       status: "loading",
-      title: "جار تحديث معلومات البطاقة",
+      title: "Updating Card Information ... ",
       duration: 1000,
       isClosable: true,
     });
@@ -34,7 +34,7 @@ export default function ShowOneCard({ params }) {
     if (res.res.ok) {
       toast({
         status: "success",
-        title: "تم تحديث معلومات البطاقة بنجاح",
+        title: "Card Information Updated Successfully",
         isClosable: true,
         duration: 5000,
       });
@@ -42,7 +42,7 @@ export default function ShowOneCard({ params }) {
     if (!res.res.ok) {
       toast({
         status: "error",
-        title: "فشل تحديث معلومات البطاقة",
+        title: "Card Information Update Failed",
         isClosable: true,
         duration: 5000,
       });
@@ -54,7 +54,7 @@ export default function ShowOneCard({ params }) {
     const res = await deleteCard(Event, params.id);
     if (res.acknowledged) {
       toast({
-        description: "تم حذف البطاقة بنجاح",
+        description: "Card Deleted",
         duration: 5000,
         isClosable: true,
         status: "info",
@@ -76,7 +76,7 @@ export default function ShowOneCard({ params }) {
   if (!searchResult) {
     return (
       <Box>
-        <Text>البطاقة غير موجودة</Text>
+        <Text>This Card Does Not Exist</Text>
       </Box>
     );
   }
