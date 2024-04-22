@@ -9,7 +9,6 @@ export default async function deleteCard(Event, id) {
       return data;
     }
   } catch (error) {
-    console.log(error);
     return error;
   }
 }

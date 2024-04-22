@@ -18,7 +18,6 @@ export default function ShowOneCard({ params }) {
     async function getbyID() {
       const res = await getCardByID(params.id);
       setSearchResult(res);
-      console.log(res);
     }
     getbyID();
   }, [params.id]);

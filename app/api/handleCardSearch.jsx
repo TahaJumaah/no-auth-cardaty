@@ -9,13 +9,10 @@ export default async function handleCardSearch(Event) {
     });
 
     if (response.ok) {
-      console.log("Response is OK! Proceeding");
       const data = await response.json();
-      console.log(data);
       return data;
     }
   } catch (error) {
-    console.log(error);
     return null;
   }
 }

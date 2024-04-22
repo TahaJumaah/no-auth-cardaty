@@ -6,6 +6,5 @@ export default async function handleSoldCards(Event) {
     body: soldForm,
   });
   const data = await response.json();
-  console.log(data);
   return data;
 }

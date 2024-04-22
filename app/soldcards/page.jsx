@@ -14,7 +14,6 @@ export default function SoldCards() {
     setSoldResult(null);
     Event.preventDefault();
     const data = await handleSoldCards(Event);
-    console.log(data);
     setSoldResult(data);
   }
 

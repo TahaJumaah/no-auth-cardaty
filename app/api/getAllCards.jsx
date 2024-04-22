@@ -8,7 +8,6 @@ export default async function getAllCards() {
       return data;
     }
   } catch (error) {
-    console.log(error);
     return null;
   }
 }

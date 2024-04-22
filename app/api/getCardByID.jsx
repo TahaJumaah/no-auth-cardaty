@@ -7,7 +7,6 @@ export default async function getCardByID(id) {
       return data;
     }
   } catch (error) {
-    console.log(error);
     return null;
   }
 }
